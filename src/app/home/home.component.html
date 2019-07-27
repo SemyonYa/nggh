@@ -1,0 +1,14 @@
+<h2>Home component</h2>
+<button (click)="clearToken()">CLEAR</button>
+<h4>Token1: {{jwt1}}</h4>
+<div>
+    <p>UserID: {{decodedToken1['uid']}}</p>
+    <p>ISS: {{decodedToken1['iss']}}</p>
+    <p>Exp: {{decodedToken1['exp'] * 1000 | date:"yyyy-MM-dd  HH:mm:ss" }}</p>
+    <p>IAT: {{decodedToken1['iat'] * 1000 | date:"yyyy-MM-dd  HH:mm:ss" }}</p>
+</div>
+<h4>Token2: {{jwt2}}</h4>
+<div>
+    <p>UserID: {{decodedToken2['uid']}}</p>
+    <p>Exp: {{decodedToken2['exp'] * 1000 | date:"yyyy-MM-dd  HH:mm:ss" }}</p>
+</div>

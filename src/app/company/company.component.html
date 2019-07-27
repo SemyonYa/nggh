@@ -1,0 +1,54 @@
+<h2>Companies</h2>
+<div [ngSwitch]="option" class="companies">
+    <ng-template ngSwitchCase="0">
+        <button (click)="loadNewForm()">Добавить</button>
+        <div class="companies-list">
+            <span *ngFor="let company of companies" class="companies-item" (click)="loadCompany(company.id)">
+                {{company.name}}
+            </span>
+        </div>
+    </ng-template>
+    <ng-template ngSwitchCase="1">
+        <table>
+            <tr>
+                <td>Name</td>
+                <td>{{currentCompany.name}}</td>
+            </tr>
+            <tr>
+                <td>Description</td>
+                <td>{{currentCompany.description}}</td>
+            </tr>
+            <tr>
+                <td>E-mail:</td>
+                <td>{{currentCompany.email}}</td>
+            </tr>
+        </table>
+        <button (click)="loadEditForm(currentCompany.id)">Редактировать</button>
+        <button (click)="loadCompanies()">В список</button>
+    </ng-template>
+    <ng-template ngSwitchCase="2">
+        <form #editForm="ngForm" novalidate>
+            <input type="hidden" name="id" [(ngModel)]="currentCompany.id">
+            <label>Name</label>
+            <input name="name" [(ngModel)]="currentCompany.name" required/>
+            <label>Description</label>
+            <textarea name="description" [(ngModel)]="currentCompany.description"></textarea>
+            <label>E-mail</label>
+            <input name="email" [(ngModel)]="currentCompany.email" required email>
+            <button (click)="loadCompanies()">Отменить</button>
+            <button [disabled]="editForm.invalid" (click)="saveCompany()">Сохранить</button>
+        </form>
+    </ng-template>
+    <ng-template ngSwitchCase="3">
+        <form #newForm="ngForm" novalidate>
+            <label>Name</label>
+            <input name="name" [(ngModel)]="currentCompany.name" required/>
+            <label>Description</label>
+            <textarea name="description" [(ngModel)]="currentCompany.description"></textarea>
+            <label>E-mail</label>
+            <input name="email" [(ngModel)]="currentCompany.email" required email>
+            <button (click)="loadCompanies()">Отменить</button>
+            <button [disabled]="editForm.invalid" (click)="addCompany()">Сохранить</button>
+        </form>
+    </ng-template>
+</div>

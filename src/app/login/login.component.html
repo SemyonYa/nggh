@@ -1,0 +1,10 @@
+<h2>Вход в систему</h2>
+<div class="error" *ngIf="error">
+    Неверный ЛОГИН и/или ПАРОЛЬ
+</div>
+<form #loginForm="ngForm" novalidate>
+    <input name="login" [(ngModel)]="loginModel.login" placeholder="LOGIN" required />
+    <!--<br>-->
+    <input type="password" name="password" [(ngModel)]="loginModel.password" placeholder="PASSWORD" required />
+    <button [disabled]="loginForm.invalid" (click)="login()">&#10004;</button>
+</form>

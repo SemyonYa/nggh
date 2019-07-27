@@ -1,0 +1,42 @@
+h2 {
+    padding: 20px 10px 10px;
+}
+.companies {
+    padding: 10px;
+}
+.companies-list {
+    padding: 15px 0;
+}
+.companies-item {
+    margin: 4px;
+    padding: 4px 44px;
+    border-radius: 4px;
+    background-color: #e4e4e4;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    color: darkcyan;
+}
+table {
+    border-collapse: separate;
+    border-spacing: 4px;
+    font-size: 16px;
+}
+table td {
+    border-radius: 4px;
+    border: solid 1px #e4e4e4;
+    padding: 4px 10px;
+
+}
+form {
+    width: 600px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+form > * {
+    flex-basis: 100%;
+    margin: 3px 0;
+}

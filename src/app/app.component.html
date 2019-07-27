@@ -1,0 +1,14 @@
+<div class="app-wrap">
+    <nav>
+        <div class="app-name" (click)="qwerty()">App Component!</div>
+        <div class="app-menu">
+            <div class="app-menu-item"><a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a></div>
+            <div class="app-menu-item"><a routerLink="/login" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Login</a></div>
+            <div class="app-menu-item"><a routerLink="/about" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">About</a></div>
+            <div class="app-menu-item"><a routerLink="/company" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Companies</a></div>
+        </div>
+    </nav>
+    <div class="app-body">
+        <router-outlet></router-outlet>
+    </div>
+</div>
